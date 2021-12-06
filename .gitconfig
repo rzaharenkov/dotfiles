@@ -1,7 +1,7 @@
 [core]
 	editor = vim
 	edit = vim
-	excludesfile = /Users/roman/.gitignore
+	excludesfile = ~/.gitignore
 	commitGraph = true
 [alias]
 	last = cat-file commit HEAD
