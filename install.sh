@@ -20,3 +20,8 @@ if [[ -d /Applications/iTerm.app ]]; then
   defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.iterm"
   defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 fi
+
+# git
+
+ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/dotfiles/.gitconfig.shopify ~/.gitconfig.shopify

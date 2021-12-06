@@ -1,0 +1,58 @@
+[core]
+	editor = vim
+	edit = vim
+	excludesfile = /Users/roman/.gitignore
+	commitGraph = true
+[alias]
+	last = cat-file commit HEAD
+  	co = checkout
+  	ci = commit
+  	st = status
+  	br = branch
+  	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  	type = cat-file -t
+  	dump = cat-file -p
+	today = log --since=midnight --author='Roman Zaharenkov' --oneline
+	m2p = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit production..master
+	m2u = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit uat..master
+	#up = pull --rebase --autostash
+        files-changed = "!f() { branch=$(git rev-parse --abbrev-ref HEAD); git diff --name-only $branch $(git merge-base $branch master); }; f"
+	recent = branch --sort='-committerdate' --format='%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)'
+[user]
+	name = Raman Zakharenkau
+	email = ZaharenkovRoman@gmail.com
+	signingkey = 7FE3C7A97D2364C6
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[commit]
+#	gpgsign = true
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg
+[push]
+        default = current
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[credential]
+	helper =
+	helper = store --file /opt/dev/var/private/git_credential_store
+[diff]
+	algorithm = patience
+[gc]
+	writeCommitGraph = true
+[protocol]
+	version = 2
+[includeIf "gitdir:~/src/github.com/Shopify/"]
+	path = .gitconfig.shopify
