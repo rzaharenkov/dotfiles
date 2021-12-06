@@ -24,17 +24,7 @@ if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then
 fi
 
 # prompt
-autoload -Uz vcs_info
-precmd_functions+=( vcs_info )
-setopt prompt_subst
-
-zstyle ":vcs_info:git:*" check-for-changes true
-zstyle ":vcs_info:*" unstagedstr "*"
-zstyle ":vcs_info:*" stagedstr "+"
-zstyle ":vcs_info:git:*" formats "%F{green}[%b%u%c]%f"
-zstyle ":vcs_info:*" enable git
-
-export PROMPT='%(?.%F{green}√.%F{red}?%?)%f [%F{33}%n@%m%f] %B%~%b $vcs_info_msg_0_ $ '
+export PROMPT='%(?.%F{green}√.%F{red}?%?)%f [%F{green}%n@%m%f] %B%~%b $(git_prompt_info)$ '
 
 # code
 export VSCODE_PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
