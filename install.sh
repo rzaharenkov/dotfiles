@@ -1,13 +1,12 @@
 #!/bin/zsh
 
-# install oh-my-zsh
-if [[ ! -d ~/.oh-my-zsh ]]; then
-  KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  source ~/.oh-my-zsh/oh-my-zsh.sh
-  compaudit | xargs chmod g-w,o-w
-fi
-
+# zsh
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
+
+# install oh-my-zsh
+if [[ -z $ZSH ]]; then
+  KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
 # install completion scripts
 mkdir -p ~/.zsh
@@ -24,7 +23,6 @@ if [[ -d /Applications/iTerm.app ]]; then
 fi
 
 # git
-
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitconfig.shopify ~/.gitconfig.shopify
 ln -sf ~/dotfiles/.gitconfig ~/.gitignore
