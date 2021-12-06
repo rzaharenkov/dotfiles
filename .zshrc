@@ -1,3 +1,9 @@
+# oh-my-zsh
+export ZSH="/Users/roman/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
 
 [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
@@ -16,13 +22,13 @@ autoload -Uz vcs_info
 precmd_functions+=( vcs_info )
 setopt prompt_subst
 
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr '*'
-zstyle ':vcs_info:*' stagedstr '+'
-zstyle ':vcs_info:git:*' formats '%F{green}[%b%u%c]%f'
-zstyle ':vcs_info:*' enable git
+zstyle ":vcs_info:git:*" check-for-changes true
+zstyle ":vcs_info:*" unstagedstr "*"
+zstyle ":vcs_info:*" stagedstr "+"
+zstyle ":vcs_info:git:*" formats "%F{green}[%b%u%c]%f"
+zstyle ":vcs_info:*" enable git
 
-export PROMPT="%(?.%F{green}√.%F{red}?%?)%f [%F{33}%n@%m%f] %B%~%b $vcs_info_msg_0_ $ "
+export PROMPT='%(?.%F{green}√.%F{red}?%?)%f [%F{33}%n@%m%f] %B%~%b $vcs_info_msg_0_ $ '
 
 # code
 
