@@ -2,6 +2,8 @@
 
 [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
 
+export TERM="xterm-256color"
+
 # load dev, but only if present and the shell is interactive
 
 if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then
@@ -20,7 +22,7 @@ zstyle ':vcs_info:*' stagedstr '+'
 zstyle ':vcs_info:git:*' formats '%F{green}[%b%u%c]%f'
 zstyle ':vcs_info:*' enable git
 
-PROMPT='%(?.%F{green}√.%F{red}?%?)%f [%F{33}%n@%m%f] %B%~%b $vcs_info_msg_0_ $ '
+export PROMPT="%(?.%F{green}√.%F{red}?%?)%f [%F{33}%n@%m%f] %B%~%b $vcs_info_msg_0_ $ "
 
 # code
 
