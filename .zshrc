@@ -24,7 +24,11 @@ if [[ -f /opt/dev/dev.sh ]] && [[ $- == *i* ]]; then
 fi
 
 # prompt
-export PROMPT='%(?.%F{green}√.%F{red}?%?)%f [%F{green}%n@%m%f] %B%~%b $(git_prompt_info)$ '
+if [ $HOST = "spin" ]; then
+  export PROMPT='%(?.%F{green}√.%F{red}?%?)%f [%F{red}%n@%m%f] %B%~%b $(git_prompt_info)$ '
+else
+  export PROMPT='%(?.%F{green}√.%F{red}?%?)%f [%F{green}%n@%m%f] %B%~%b $(git_prompt_info)$ '
+fi
 
 # code
 export VSCODE_PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
