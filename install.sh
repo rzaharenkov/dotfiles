@@ -10,8 +10,8 @@ ln -sf ~/dotfiles/.zshrc ~/.zshrc
 # install completion scripts
 mkdir -p ~/.zsh
 cd ~/.zsh
-curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
-curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+[[ ! -f git-completion.bash ]] && curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+[[ ! -f _git ]] && curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
 
 # configure iTerm settings sync
 if [[ -d /Applications/iTerm.app ]]; then
@@ -25,3 +25,4 @@ fi
 
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitconfig.shopify ~/.gitconfig.shopify
+ln -sf ~/dotfiles/.gitconfig ~/.gitignore
