@@ -5,19 +5,14 @@
 	commitGraph = true
 [alias]
 	last = cat-file commit HEAD
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
 	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 	type = cat-file -t
 	dump = cat-file -p
 	today = log --since=midnight --author='Raman Zakharenkau' --oneline
-	m2p = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit production..master
-	m2u = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit uat..master
-	#up = pull --rebase --autostash
   files-changed = "!f() { branch=$(git rev-parse --abbrev-ref HEAD); git diff --name-only $branch $(git merge-base $branch master); }; f"
 	recent = branch --sort='-committerdate' --format='%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)'
+	# m2p = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit production..master
+	# m2u = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit uat..master
 [user]
 	name = Raman Zakharenkau
 	email = ZaharenkovRoman@gmail.com
