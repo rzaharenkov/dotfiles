@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # install oh-my-zsh
 if [[ ! -d ~/.oh-my-zsh ]]; then
   KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
