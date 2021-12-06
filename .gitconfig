@@ -12,7 +12,7 @@
   	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   	type = cat-file -t
   	dump = cat-file -p
-	today = log --since=midnight --author='Roman Zaharenkov' --oneline
+	today = log --since=midnight --author='Raman Zakharenkau' --oneline
 	m2p = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit production..master
 	m2u = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit uat..master
 	#up = pull --rebase --autostash
