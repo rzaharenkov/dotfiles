@@ -5,18 +5,18 @@
 	commitGraph = true
 [alias]
 	last = cat-file commit HEAD
-  	co = checkout
-  	ci = commit
-  	st = status
-  	br = branch
-  	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  	type = cat-file -t
-  	dump = cat-file -p
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
 	today = log --since=midnight --author='Raman Zakharenkau' --oneline
 	m2p = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit production..master
 	m2u = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit uat..master
 	#up = pull --rebase --autostash
-        files-changed = "!f() { branch=$(git rev-parse --abbrev-ref HEAD); git diff --name-only $branch $(git merge-base $branch master); }; f"
+  files-changed = "!f() { branch=$(git rev-parse --abbrev-ref HEAD); git diff --name-only $branch $(git merge-base $branch master); }; f"
 	recent = branch --sort='-committerdate' --format='%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)'
 [user]
 	name = Raman Zakharenkau
@@ -28,19 +28,8 @@
 	branch = auto
 	interactive = auto
 	ui = true
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
-[filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
-[commit]
-#	gpgsign = true
-[gpg]
-	program = /usr/local/MacGPG2/bin/gpg
 [push]
-        default = current
+	default = current
 [pull]
 	rebase = true
 [rebase]
