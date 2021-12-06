@@ -1,3 +1,4 @@
+# install oh-my-zsh
 if [[ ! -d ~/.oh-my-zsh ]]; then
   KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   source ~/.oh-my-zsh/oh-my-zsh.sh
@@ -6,6 +7,13 @@ fi
 
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
+# install completion scripts
+mkdir -p ~/.zsh
+cd ~/.zsh
+curl -o git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+curl -o _git https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+
+# configure iTerm settings sync
 if [[ -d /Applications/iTerm.app ]]; then
   ln -sf ~/dotfiles/.iterm ~/.iterm
 
