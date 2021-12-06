@@ -1,7 +1,9 @@
 # oh-my-zsh
+
 export ZSH="/Users/roman/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 plugins=(git)
+compaudit | xargs chmod g-w,o-w
 source $ZSH/oh-my-zsh.sh
 
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
