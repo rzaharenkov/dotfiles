@@ -33,6 +33,8 @@
 	algorithm = patience
 [gc]
 	writeCommitGraph = true
+[pager]
+	branch = cat
 [protocol]
 	version = 2
 [includeIf "gitdir:~/src/github.com/Shopify/"]
