@@ -1,41 +1,33 @@
 [core]
-	editor = vim
-	edit = vim
-	excludesfile = ~/.gitignore
-	commitGraph = true
+  editor = vim
+  edit = vim
+  excludesfile = ~/.gitignore
 [alias]
-	last = cat-file commit HEAD
-	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-	type = cat-file -t
-	dump = cat-file -p
-	today = log --since=midnight --author='Raman Zakharenkau' --oneline
+  last = cat-file commit HEAD
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  today = log --since=midnight --author='Raman Zakharenkau' --oneline
   files-changed = "!f() { branch=$(git rev-parse --abbrev-ref HEAD); git diff --name-only $branch $(git merge-base $branch master); }; f"
-	recent = branch --sort='-committerdate' --format='%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)'
-	# m2p = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit production..master
-	# m2u = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit uat..master
+  recent = branch --sort='-committerdate' --format='%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)'
+  # m2p = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit production..master
+  # m2u = log --no-merges --pretty=format:'%Cred%h%Creset -%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit uat..master
 [user]
-	name = Raman Zakharenkau
-	email = ZaharenkovRoman@gmail.com
-	signingkey = 7FE3C7A97D2364C6
+  name = Raman Zakharenkau
+  email = ZaharenkovRoman@gmail.com
 [color]
-	diff = auto
-	status = auto
-	branch = auto
-	interactive = auto
-	ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
 [push]
-	default = current
+  default = current
 [pull]
-	rebase = true
+  rebase = true
 [rebase]
-	autoStash = true
-[diff]
-	algorithm = patience
-[gc]
-	writeCommitGraph = true
+  autoStash = true
 [pager]
-	branch = cat
-[protocol]
-	version = 2
+  branch = cat
 [includeIf "gitdir:~/src/github.com/Shopify/"]
-	path = .gitconfig.shopify
+  path = .gitconfig.shopify
