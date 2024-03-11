@@ -11,6 +11,6 @@ chsh -s $(which zsh)
 ## Install
 
 ```
-git clone git://github.com/rzaharenkov/dotfiles.git ~/dotfiles
+git clone git@github.com:rzaharenkov/dotfiles.git ~/dotfiles
 ~/dotfiles/install.sh
 ```
