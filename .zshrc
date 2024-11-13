@@ -10,7 +10,7 @@ fpath=(~/.zsh $fpath)
 autoload -Uz compinit && compinit
 
 # ruby
-[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
 
 # Homebrew
 [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
@@ -34,3 +34,9 @@ fi
 export VSCODE_PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 [[ -d $VSCODE_PATH ]] && export PATH="$PATH:$VSCODE_PATH"
+
+alias pinentry="pinentry-mac"
+
+# cloudplatform: add Shopify clusters to your local kubernetes config
+export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/roman/.kube/config:/Users/roman/.kube/config.shopify.cloudplatform
+for file in /Users/roman/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
