@@ -2,21 +2,3 @@
   name = Raman Zakharenkau
   email = raman.zakharenkau@shopify.com
   signingkey = DFAA6EB2EE58241C5BDE9F2F3AC1F966314D9233
-[credential]
-  helper = store --file /opt/dev/var/private/git_credential_store
-[core]
-  commitGraph = true
-[diff]
-  algorithm = patience
-[gc]
-  writeCommitGraph = true
-[protocol]
-  version = 2
-[url "https://github.com/Shopify/"]
-  insteadOf = git@github.com:Shopify/
-  insteadOf = git@github.com:shopify/
-  insteadOf = ssh://git@github.com/Shopify/
-  insteadOf = ssh://git@github.com/shopify/
-[commit]
-  gpgSign = true
-	

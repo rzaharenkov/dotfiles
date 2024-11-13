@@ -31,3 +31,5 @@
   branch = cat
 [includeIf "gitdir:~/src/github.com/Shopify/"]
   path = .gitconfig.shopify
+[includeIf "gitdir:~/src/github.com/Shopify/"]
+  path = /Users/roman/.config/dev/gitconfig
