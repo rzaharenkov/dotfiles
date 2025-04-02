@@ -41,4 +41,9 @@ alias pinentry="pinentry-mac"
 
 # cloudplatform: add Shopify clusters to your local kubernetes config
 export KUBECONFIG=${KUBECONFIG:+$KUBECONFIG:}/Users/roman/.kube/config:/Users/roman/.kube/config.shopify.cloudplatform
-for file in /Users/roman/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
+
+if [[ -d "$HOME/src/github.com/Shopify/cloudplatform/workflow-utils/" ]]; then
+    for file in "$HOME/src/github.com/Shopify/cloudplatform/workflow-utils/"*.bash; do
+        source "$file"
+    done
+fi
