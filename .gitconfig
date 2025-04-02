@@ -29,7 +29,15 @@
   autoStash = true
 [pager]
   branch = cat
+[init]
+	defaultBranch = main
 [includeIf "gitdir:~/src/github.com/Shopify/"]
+  path = .gitconfig.shopify
+[includeIf "gitdir:~/src/github.com/shop/"]
   path = .gitconfig.shopify
 [includeIf "gitdir:~/src/github.com/Shopify/"]
   path = /Users/roman/.config/dev/gitconfig
+[includeIf "gitdir:~/src/github.com/shop/"]
+	path = /Users/roman/.config/dev/gitconfig
+[maintenance]
+	repo = /Users/roman/world/trees/root/src
